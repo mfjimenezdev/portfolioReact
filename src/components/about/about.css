@@ -1,0 +1,61 @@
+#about-particlesBG{
+  position: fixed;
+  top: 0;
+  height: 100%;
+  z-index: -1;
+}
+
+.about-container{
+  padding-top: 2em;
+  top: 5vh !important;
+  text-align: center;
+}
+#portrait{
+  width: 15vw !important;
+  min-width: 200px !important;
+  border-radius: 50% !important;
+}
+
+.vanish-icons{
+  background-color: #212121;
+  animation: vanishing 4s ease-in-out infinite;
+  width: 75vw;
+  max-width: 480px;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+@keyframes vanishing {
+  0% { opacity: 1 }
+  25% { opacity: 0 }
+  50% { opacity: 1 }
+  75% { opacity: 0 }
+  100% { opacity: 1 }
+}
+
+.icons{
+  width: 25vw;
+  max-width: 100px;
+}
+
+@media (max-width: 999px) {
+  #text-container{
+    padding: 0 1em 0 1em;
+  }
+}
+
+@media (min-width: 1000px) {
+  #portrait-container{
+    text-align:right;
+  }
+
+  #text-container{
+    text-align:left;
+    padding: 7em 15em 0 5em;
+  }
+
+  .vanish-icons{
+    width: 25vw;
+  }
+}

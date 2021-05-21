@@ -1,0 +1,197 @@
+.navbar-container{
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 5em;
+  z-index: 255;
+}
+
+#menuToggleIcon {
+  position: absolute;
+  z-index: 255;
+  top: 0;
+  right: 1em;
+}
+
+#menuDashIcons {
+  border-color: #a71212;
+  border-style: solid;
+  position: relative;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  text-align: right;
+}
+
+#menuToggleIcon {
+  overflow: hidden;
+  width: 4em;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+#menuToggleIcon input {
+  display: flex;
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 1;
+}
+
+#menuToggleIcon span{
+  width: 55px;
+  height: 6px;
+  margin-bottom: 10px;
+  background: #a71212;
+  border-radius: 4px;
+  -webkit-transition: all .5s cubic-bezier(.08,.81,.87,.71);
+  -moz-transition: all .5s cubic-bezier(.08,.81,.87,.71);
+  -ms-transition: all .5s cubic-bezier(.08,.81,.87,.71);
+  -o-transition: all .5s cubic-bezier(.08,.81,.87,.71);
+  transition: all .5s cubic-bezier(.08,.81,.87,.71);
+}
+
+#span1 {
+  transform-origin: 4px 0px;
+}
+
+#menuToggleIcon input:checked ~ #span1 {
+  transform: rotate(45deg) translate(8px);
+}
+
+#menuToggleIcon input:checked ~ #span2 {
+  transform: rotate(495deg) translate(4px);   
+}
+
+.navbarImg {
+  width: 15vw; 
+  max-width: 65px;
+}
+
+
+/* PHONES */
+@media (max-width: 1279px) {
+  [id^="icon"] {
+    padding-right: 0em;
+    transition: opacity 0.75s, margin 1s;
+  }
+
+  #menuDashIcons.showed {
+    border-width: 0px 0px 3px 0px;
+    transition: 0s ease-in-out 0s;
+    background-color: #12121290;
+  }
+
+  #menuDashIcons.hidden {
+    border-width: 0px 0px 0px 0px;
+    transition: border-width 0.1s ease-in-out 0.5s, background-color 0.5s;
+  }
+
+  .hidden > #icon1 {
+    opacity: 0;
+    margin: 1vh -8vw 0 0;
+  }
+  
+  .hidden > #icon2 {
+    opacity: 0;
+    margin: 1vh -8vw 0 0;
+  }
+  
+  .hidden > #icon3 {
+    opacity: 0;
+    margin: 1vh -3vw 0 0;
+  }
+  
+  .hidden > #icon4 {
+    opacity: 0;
+    margin: 1vh 0 0 0;
+  }
+  
+  .showed > #icon1 {
+    opacity: 1;
+    margin: 3vh 3vw 0 0;
+  }
+  
+  .showed > #icon2 {
+    opacity: 1;
+    margin: 3vh 3vw 0 0;
+  }
+  
+  .showed > #icon3 {
+    opacity: 1;
+    margin: 3vh 3vw 0 0;
+  }
+  
+  .showed > #icon4 {
+    opacity: 1;
+    margin: 3vh 25vw 0 0;
+  }
+
+}
+
+/* DESKTOP */
+@media (min-width: 1280px) {
+  [id^="icon"] {
+    padding-right: 1em;
+    transition: opacity 0.75s, margin 1s;
+  }
+
+  #menuDashIcons.showed {
+    width: 6vw;
+    border-width: 0px 0px 0px 3px;
+    transition: border-width 0s ease-in-out 0s;
+    background-color: #12121290;
+  }
+
+  #menuDashIcons.hidden {
+    width: 6vw;
+    border-width: 0px 0px 0px 0px;
+    transition: border-width 0.1s ease-in-out 0.3s, background-color 0.5s;
+  }
+
+  .hidden > #icon1 {
+    opacity: 0;
+    margin: 0 0 0 0;
+  }
+
+  .hidden > #icon2 {
+    opacity: 0;
+    margin: -8vh 0 0 0;
+  }
+
+  .hidden > #icon3 {
+    opacity: 0;
+    margin: -8vh 0 0 0;
+  }
+
+  .hidden > #icon4 {
+    opacity: 0;
+    margin: -8vh 0 0 0;
+  }
+
+  .showed > #icon1 {
+    opacity: 1;
+    margin: 10vh 0 0 0;
+  }
+
+  .showed > #icon2 {
+    opacity: 1;
+    margin: 4vh 0 0 0;
+  }
+
+  .showed > #icon3 {
+    opacity: 1;
+    margin: 4vh 0 0 0;
+  }
+
+  .showed > #icon4 {
+    opacity: 1;
+    margin: 4vh 0 0 0;
+  }
+
+}

@@ -1,0 +1,51 @@
+.intro-body{
+  overflow: hidden;
+}
+
+.intro-container{
+  position: absolute;
+  top:20% !important;
+}
+
+.shell{
+  font-size: 1.5em !important;
+  text-align: right;
+}
+
+.Typewriter__cursor{
+  font-size: 1.5em !important;
+  width:100%;
+}
+
+.Typewriter__wrapper{
+  font-size: 1.5em !important;
+}
+
+.tw-container{
+  width: 280px !important;
+  margin-bottom: 5em !important;
+}
+
+.keyboard-container{
+  text-align: center !important;
+}
+
+.enterKey{
+  position: relative;
+  width:30vw !important;
+  max-width: 200px !important; 
+  height: auto !important;
+  animation: entryEnterKey 2.5s, float 3s ease-in-out infinite;
+}
+
+@keyframes entryEnterKey {
+  0% { bottom: -500px; opacity: 0 }
+  66% { bottom: 10px; opacity: 1 }
+  100% { bottom: 0px; opacity: 1 }
+}
+
+@keyframes float {
+  0% { transform: translatey(0px); }
+  50% { transform: translatey(-20px); }
+  100% { transform: translatey(0px); }
+}
