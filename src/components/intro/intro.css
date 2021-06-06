@@ -36,6 +36,7 @@
   max-width: 200px !important; 
   height: auto !important;
   animation: entryEnterKey 2.5s, float 3s ease-in-out infinite;
+  cursor: pointer !important;
 }
 
 @keyframes entryEnterKey {

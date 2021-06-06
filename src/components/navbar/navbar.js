@@ -1,10 +1,10 @@
 import { Grid } from '@material-ui/core';
 import './navbar.css';
 
-import homeIco from '../../assets/images/home_ico.svg';
-import aboutIco from '../../assets/images/about_ico.svg';
-import projectsIco from '../../assets/images/projects_ico.svg';
-import contactIco from '../../assets/images/contact_ico.svg';
+import homeIco from '../../assets/images/barsIcons/home_ico.svg';
+import aboutIco from '../../assets/images/barsIcons/about_ico.svg';
+import projectsIco from '../../assets/images/barsIcons/projects_ico.svg';
+import contactIco from '../../assets/images/barsIcons/contact_ico.svg';
 
 function menuToggle() {
   var iconContainer = document.getElementById('menuDashIcons');

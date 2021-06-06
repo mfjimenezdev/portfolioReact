@@ -1,5 +1,5 @@
 import KeyboardEventHandler from 'react-keyboard-event-handler';
-import enterKey from '../../assets/images/enterKey.svg';
+import enterKey from '../../assets/images/intro/enterKey.svg';
 
 // function selectLeft(){
 //   console.log('left pressed');

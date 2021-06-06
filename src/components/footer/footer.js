@@ -1,8 +1,8 @@
 import { Grid } from '@material-ui/core';
 import "./footer.css";
 
-import ghubIco from '../../assets/images/ghub_ico.svg';
-import lkdInIco from '../../assets/images/lkdIn_ico.svg';
+import ghubIco from '../../assets/images/barsIcons/ghub_ico.svg';
+import lkdInIco from '../../assets/images/barsIcons/lkdIn_ico.svg';
 
 function footer() {
   return(

@@ -1,16 +1,15 @@
-import { Grid } from '@material-ui/core';
+import './intro.css';
 import ReactDOM from 'react-dom';
-import Particles from 'react-particles-js';
-import ParticlesConfigBG from '../../assets/scripts/configParticlesBG';
+import { Grid } from '@material-ui/core';
 import Typewriter from 'typewriter-effect';
 import IntroSkip from './intro-skip';
-import './intro.css';
+import Particles from 'react-particles-js';
+import ParticlesConfigBG from '../../assets/scripts/configParticlesBG';
 
-function intro() {
+function Intro() {
   document.body.className = 'intro-body';
   return (
     <div>
-      <Particles width="100vw" height="100vh" params={ParticlesConfigBG}/>
       <Grid container justify='center' className="intro-container">
         <Grid item xs={2} sm={4} md={5} className='shell'>
           <span>{"> "}</span>
@@ -33,8 +32,10 @@ function intro() {
           <div id="lazyLoadEnterKey" />
         </Grid>
       </Grid>
+
+      <Particles width="100vw" height="100vh" params={ParticlesConfigBG}/>
     </div>
   );
 }
 
-export default intro;
+export default Intro;

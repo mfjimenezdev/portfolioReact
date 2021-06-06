@@ -1,20 +1,20 @@
+import './about.css';
 import Particles from 'react-particles-js';
 import ParticlesConfigBG from '../../assets/scripts/configParticlesBG';
 import { Grid } from '@material-ui/core';
 
-import portrait from '../../assets/images/portfolio_cartoon.jpg';
-import htmlIco from '../../assets/images/html_ico.svg';
-import cssIco from '../../assets/images/css_ico.svg';
-import jsIco from '../../assets/images/js_ico.svg';
-import phpIco from '../../assets/images/php_ico.svg';
-import pythonIco from '../../assets/images/python_ico.svg';
-import reactIco from '../../assets/images/react_ico.svg';
-import mysqlIco from '../../assets/images/mysql_ico.svg';
-import sqlServerIco from '../../assets/images/sqlServer_ico.svg';
-import mongodbIco from '../../assets/images/mongodb_ico.svg';
-import './about.css';
+import portrait from '../../assets/images/about/portfolio_cartoon.jpg';
+import htmlIco from '../../assets/images/about/html_ico.svg';
+import cssIco from '../../assets/images/about/css_ico.svg';
+import jsIco from '../../assets/images/about/js_ico.svg';
+import phpIco from '../../assets/images/about/php_ico.svg';
+import pythonIco from '../../assets/images/about/python_ico.svg';
+import reactIco from '../../assets/images/about/react_ico.svg';
+import mysqlIco from '../../assets/images/about/mysql_ico.svg';
+import sqlServerIco from '../../assets/images/about/sqlServer_ico.svg';
+import mongodbIco from '../../assets/images/about/mongodb_ico.svg';
 
-function about() {
+function About() {
   return (
     <div>
       <Grid container justify="center" className="about-container">
@@ -61,9 +61,10 @@ function about() {
           </div>
         </Grid>
       </Grid>
+
       <Particles width="99vw" params={ParticlesConfigBG} id="about-particlesBG"/>
     </div>
   )
 }
 
-export default about;
+export default About;
