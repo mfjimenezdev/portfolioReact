@@ -1,34 +1,56 @@
+/* MAIN STYLES */
 .projects-container {
   margin-top: 2em;
   text-align: center;
 }
 
+#tw-projects {
+  min-height: 100px !important;
+}
+/*-------------------------------------------------------------*/
+/* SLIDER CATEGORY CONTROLS */
 .checkIcon {
   max-width: 30px;
+  padding-left: 5vw;
 }
 
-/*------------ SLIDER ------------*/
+.MuiTouchRipple-root {
+  left: 5vw !important;
+  color: #A71212 !important;
+}
+
+@media (max-width: 600px) {
+  .MuiFormControlLabel-label {
+    display: none;
+  }
+
+  .checkIcon {
+    padding-left: 7vw;
+  }
+}
+/*-------------------------------------------------------------*/
+/* SLIDER */
 .slider-container {
-  /* width: 70vw; */
   width: 70%;
   max-width: 650px;
   aspect-ratio: 1/1;
-  /* height: 40vh; */
 }
 
-.slider {
-  text-align: center;
-  /* box-shadow: inset 15px 15px 20px -11px rgba(0,0,0,1) !important; */
+@supports not (aspect-ratio: 1/1) {
+  .slider-container::before {
+    float: left;
+    padding-top: 100%;
+    content: "";
+  }
 
-  /* box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, 
-  rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset !important; */
-  background-color: #353535 !important;
-  box-shadow: rgb(0, 0, 0) 3px 3px 6px 0px inset, 
-    rgba(255, 255, 255, 0.05) -3px -3px 6px 1px inset !important;
-  border-radius: 10px !important;
+  .slider-container::after {
+    display: block;
+    content: "";
+    clear: both;
+  }
 }
-
-/* NAVEGATION */
+/*-------------------------------------------------------------*/
+/* NAV DOTS */
 .dots {
   display: flex;
   padding: 10px 0;
@@ -53,6 +75,4 @@
 .dot.active {
   background: #A71212;
 }
-/*------------*/
-
 /*--------------------------------*/

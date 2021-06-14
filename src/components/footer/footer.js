@@ -12,7 +12,7 @@ function footer() {
         <Grid container direction="row">
           <Grid item xs={12} sm={3}></Grid>
           <Grid item xs={12} sm={6}>
-            © 2021 Moisés Fernández
+            © {new Date().getFullYear()} Moisés Fernández
           </Grid>
           <Grid item xs={12} sm={3} id="footer-icons">
             <a href="https://www.linkedin.com/in/mfjimenezdev/" target="_blank" rel="noopener noreferrer"><img src={lkdInIco} alt="linkedInIcon" className="footerImg" /></a>

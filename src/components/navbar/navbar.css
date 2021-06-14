@@ -1,29 +1,18 @@
-.navbar-container{
+/* MAIN STYLES */
+.navbar-container {
   position: fixed;
   top: 0;
   right: 0;
   height: 5em;
   z-index: 255;
 }
-
+/*-------------------------------------------------------------*/
+/* MENU ICON */
 #menuToggleIcon {
   position: absolute;
   z-index: 255;
   top: 0;
   right: 1em;
-}
-
-#menuDashIcons {
-  border-color: #a71212;
-  border-style: solid;
-  position: relative;
-  z-index: 1;
-  top: 0;
-  right: 0;
-  text-align: right;
-}
-
-#menuToggleIcon {
   overflow: hidden;
   width: 4em;
   height: 100%;
@@ -43,7 +32,7 @@
   z-index: 1;
 }
 
-#menuToggleIcon span{
+#menuToggleIcon span {
   width: 55px;
   height: 6px;
   margin-bottom: 10px;
@@ -67,12 +56,24 @@
 #menuToggleIcon input:checked ~ #span2 {
   transform: rotate(495deg) translate(4px);   
 }
+/*-------------------------------------------------------------*/
+/* MENU ICONS CONTAINER */
+#menuDashIcons {
+  border-color: #a71212;
+  border-style: solid;
+  position: relative;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  text-align: right;
+}
 
 .navbarImg {
   width: 15vw; 
   max-width: 65px;
 }
-
+/*-------------------------------------------------------------*/
+/* ICONS SHOW/HIDE ANIMATION & RESPONSIVE */
 
 /* PHONES */
 @media (max-width: 700px) {
@@ -96,6 +97,7 @@
     margin: 1vh 0 0 0 !important;
   }
 }
+/*--------------------------------*/
 
 /* PHONE // HALF WINDOW */
 @media (max-width: 1279px) {
@@ -156,6 +158,7 @@
   }
 
 }
+/*--------------------------------*/
 
 /* DESKTOP */
 @media (min-width: 1280px) {
@@ -218,3 +221,5 @@
   }
 
 }
+/*--------------------------------*/
+/*-------------------------------------------------------------*/

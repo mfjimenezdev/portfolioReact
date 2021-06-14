@@ -1,38 +1,41 @@
-.intro-body{
+/* MAIN STYLE */
+.intro-body {
   overflow: hidden;
 }
 
-.intro-container{
+.intro-container {
   position: absolute;
-  top:20% !important;
+  top: 20% !important;
 }
-
-.shell{
+/*-------------------------------------------------------------*/
+/* TYPEWRITER */
+.shell {
   font-size: 1.5em !important;
   text-align: right;
 }
 
-.Typewriter__cursor{
-  font-size: 1.5em !important;
-  width:100%;
-}
-
-.Typewriter__wrapper{
-  font-size: 1.5em !important;
-}
-
-.tw-container{
+.tw-container {
   width: 280px !important;
   margin-bottom: 5em !important;
 }
 
-.keyboard-container{
+.Typewriter__cursor {
+  font-size: 1.5em !important;
+  width: 100%;
+}
+
+.Typewriter__wrapper {
+  font-size: 1.5em !important;
+}
+/*-------------------------------------------------------------*/
+/* KEY EFFECTS */
+.keyboard-container {
   text-align: center !important;
 }
 
-.enterKey{
+.enterKey {
   position: relative;
-  width:30vw !important;
+  width: 30vw !important;
   max-width: 200px !important; 
   height: auto !important;
   animation: entryEnterKey 2.5s, float 3s ease-in-out infinite;
@@ -50,3 +53,4 @@
   50% { transform: translatey(-20px); }
   100% { transform: translatey(0px); }
 }
+/*-------------------------------------------------------------*/

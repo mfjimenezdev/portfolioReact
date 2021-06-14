@@ -1,26 +1,26 @@
 import './projects.css';
-import { Grid, Checkbox } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 import Typewriter from 'typewriter-effect';
-import mail_ok from '../../assets/images/contact/mail_ok.svg';
-import mail_ko from '../../assets/images/contact/mail_ko.svg';
 
 import 'keen-slider/keen-slider.min.css';
 import { useKeenSlider } from 'keen-slider/react';
 import { useState, useRef, useEffect } from 'react';
-
-import Portfolio from './slides/portfolio';
+import { SliderControl, RenderSlides } from './slides';
 
 import Particles from 'react-particles-js';
 import ParticlesConfigBG from '../../assets/scripts/configParticlesBG';
 
+
 function Projects() {
+  // SLIDER HOOKS
   const [pause, setPause] = useState(false);
   const timer = useRef();
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [totalDots, setTotalDots] = useState(1);
   const [sliderRef, slider] = useKeenSlider({
     slidesPerView: 1,
     mode: "free-snap",
-    dragSpeed: 0.3,
+    dragSpeed: 0.5,
     spacing: 15,
 
     loop: true,
@@ -39,6 +39,7 @@ function Projects() {
 
   });
 
+  // STOP SLIDING ON MOUSE
   useEffect(() => {
     sliderRef.current.addEventListener("mouseover", () => {
       setPause(true);
@@ -48,6 +49,7 @@ function Projects() {
     });
   }, [sliderRef]);
 
+  // AUTOMATIC SLIDING
   useEffect(() => {
     timer.current = setInterval(() => {
       if (!pause && slider) {
@@ -59,48 +61,52 @@ function Projects() {
     }
   }, [pause, slider]);
 
+  // RESET NAV DOTS ON CHANGE
+  useEffect(() => {
+    if (slider) {
+      setTotalDots(slider.details().size);
+    }
+  }, [slider]);
+
+  // RESET SLIDER ON CHANGE
+  function reloadSlider() {
+    process.nextTick(() => {
+      slider.resize();
+      setTotalDots(slider.details().size);
+    });
+  }
+  /*-------------------------------------------------------------*/
+
   return (
     <div className="projects-container">
-      <Grid container justify="flex-end">
-
-        <Grid item xs={12}>
+      <Grid container>
+        <Grid item xs={12} id="tw-projects">
           <Typewriter
             options={{cursor:"_", delay:100}}
             onInit={(typewriter) => {
               typewriter.typeString("Check out some of my projects!").start();
             }}
           />
-          <br/><br/>
         </Grid>
 
         <Grid item xs={1}>
-          <Checkbox icon={<img src={mail_ko} alt="icon1" className="checkIcon" />}  checkedIcon={<img src={mail_ok} alt="icon" className="checkIcon" />} /><br/>
-          <Checkbox icon={<img src={mail_ko} alt="icon1" className="checkIcon" />}  checkedIcon={<img src={mail_ok} alt="icon" className="checkIcon" />} />
-        </Grid>
-        <Grid item xs={10} align="center">
-          <div ref={sliderRef} className="keen-slider slider-container">
-
-            <Portfolio />
-            <Portfolio />
-            <Portfolio />
-            <Portfolio />
-            <Portfolio />
-            <Portfolio />
-            <Portfolio />
-            <Portfolio />
-            <Portfolio />
-            <Portfolio />
-            <Portfolio />
-            <Portfolio />
-
+          <div onClick={reloadSlider} >
+            <SliderControl />
           </div>
         </Grid>
+
+        <Grid item xs={10} align="center">
+          <div ref={sliderRef} className="keen-slider slider-container">
+            <RenderSlides />
+          </div>
+        </Grid>
+
         <Grid item xs={1} />
 
         <Grid item xs={12}>
           {slider && (
             <div className="dots">
-              {[...Array(slider.details().size).keys()].map((idx) => {
+              {[...Array(totalDots).keys()].map((idx) => {
                 return (
                   <button
                     key={idx}

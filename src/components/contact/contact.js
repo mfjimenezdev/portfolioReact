@@ -9,6 +9,7 @@ import mail_ko from '../../assets/images/contact/mail_ko.svg';
 import Particles from 'react-particles-js';
 import ParticlesConfigBG from '../../assets/scripts/configParticlesBG';
 
+// MaterialUI Styling
 const useStyles = makeStyles({
   textfields: {
     width: "60vw",
@@ -45,7 +46,8 @@ const useStyles = makeStyles({
     },
 
   },
-}); 
+});
+// -----------------------------------
 
 function Contact() {
   document.body.className = 'contact-body';

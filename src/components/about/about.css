@@ -1,22 +1,30 @@
-#about-particlesBG{
+/* MAIN STYLES */
+.about-container {
+  padding-top: 2em;
+  top: 5vh !important;
+  text-align: center;
+}
+
+#about-particlesBG {
   position: fixed;
   top: 0;
   height: 100%;
   z-index: -1;
 }
-
-.about-container{
-  padding-top: 2em;
-  top: 5vh !important;
-  text-align: center;
-}
-#portrait{
+/*-------------------------------------------------------------*/
+/* PORTRAIT */
+#portrait {
   width: 15vw !important;
   min-width: 200px !important;
   border-radius: 50% !important;
 }
+/*-------------------------------------------------------------*/
+/* SKILLSET */
+#icons-container {
+  margin-bottom: 5em;
+}
 
-.vanish-icons{
+.vanish-icons {
   background-color: #212121;
   animation: vanishing 4s ease-in-out infinite;
   width: 75vw;
@@ -34,11 +42,46 @@
   100% { opacity: 1 }
 }
 
-.icons{
+.icons {
   width: 25vw;
   max-width: 100px;
 }
 
+/*-------------------------------------------------------------*/
+/* EXPERIENCE */
+#experience-container {
+  text-align: center;
+}
+
+.experience-items div:nth-of-type(1) {
+  width: 6em !important;
+  min-width: 6em !important;
+  padding: 10% 16px; 
+  white-space: nowrap;
+}
+
+.experience-items div:nth-of-type(2) {
+  min-width: 45px;
+}
+
+.dotIcons {
+  width: 8vw;
+  max-width: 30px;
+  border-radius: 50%;
+ }
+
+.MuiTimelineDot-root {
+  padding: 0px !important;
+  color: #A71212 !important;
+  background-color: #A71212 !important;
+  margin-left: 6px !important;
+}
+
+.MuiTimelineConnector-root {
+  background-color: #A71212 !important;
+}
+/*-------------------------------------------------------------*/
+/* RESPONSIVE FUNCTIONS */
 @media (max-width: 999px) {
   #text-container{
     padding: 0 1em 0 1em;
@@ -50,12 +93,13 @@
     text-align:right;
   }
 
-  #text-container{
+  #text-container {
     text-align:left;
     padding: 7em 15em 0 5em;
   }
 
-  .vanish-icons{
+  .vanish-icons {
     width: 25vw;
   }
 }
+/*-------------------------------------------------------------*/

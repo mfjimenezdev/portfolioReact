@@ -1,5 +1,5 @@
-/* ESTILOS DE LOS CONTENEDORES PRINCIPALES */
-.contact-body{
+/* MAIN STYLES */
+.contact-body {
   overflow: hidden;
 }
 
@@ -8,6 +8,14 @@
   text-align: center;
 }
 
+#contact-particlesBG {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  z-index: -1;
+}
+/*-------------------------------------------------------------*/
+/* CONTACT FORM */
 .contact-card {
   width: 90vw;
   position: relative;left: 50%;
@@ -16,21 +24,13 @@
   color: white;
 }
 
-#contact-particlesBG {
-  position: fixed;
-  top: 0;
-  height: 100%;
-  z-index: -1;
-}
-/* --------------------------------------------------------------------------- */
 @media (min-width: 1000px) {
   .contact-card {
     width: 40vw;
   }
 }
-/* --------------------------------------------------------------------------- */
-
-/* ESPACIADO DE LOS CAMPOS DEL FORMULARIO */
+/*-------------------------------------------------------------*/
+/* FORMFIELDS SPACING */
 #user_name-field {
   margin-bottom: 0.75em;
 }
@@ -46,9 +46,8 @@
 #message-field {
   margin-bottom: 1em;
 }
-/* --------------------------------------------------------------------------- */
-
-/* ESTILO DEL EVENTO CHECK DEL FORMULARIO */
+/*-------------------------------------------------------------*/
+/* EMAILJS RESPONSE CHECK */
 .sentEvent {
   position: absolute;
   left: 0;
@@ -76,4 +75,4 @@
   width: 30vw;
   max-width: 180px;
 }
-/* --------------------------------------------------------------------------- */
+/*-------------------------------------------------------------*/

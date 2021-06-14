@@ -1,15 +1,15 @@
 import KeyboardEventHandler from 'react-keyboard-event-handler';
 import enterKey from '../../assets/images/intro/enterKey.svg';
 
-// function selectLeft(){
-//   console.log('left pressed');
-// }
-
-// function selectRight(){
-//   console.log('right pressed');
-// }
-
 function IntroSkip() {
+  // function selectLeft(){
+  //   console.log('left pressed');
+  // }
+
+  // function selectRight(){
+  //   console.log('right pressed');
+  // }
+
   return (
     <div>
       <KeyboardEventHandler
@@ -17,7 +17,7 @@ function IntroSkip() {
         onKeyEvent={(key, e) => {
           switch(key){
             case 'enter':
-              window.location.href= "/about"
+              window.location.href="/about";
               break;
 
             // case 'left':
@@ -33,7 +33,7 @@ function IntroSkip() {
           }
         }} 
       />
-      <img src={enterKey} alt="EnterKey" className="enterKey" onClick={() => window.location.href= "/about"}/>
+      <img src={enterKey} alt="EnterKey" className="enterKey" onClick={() => window.location.href="/about"}/>
     </div>
   );
 }

@@ -1,3 +1,4 @@
+/* MAIN STYLES */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
 .footer-container {
@@ -25,6 +26,19 @@
   text-align: center;
 }
 
+.footerImg {
+  width: 20vw;
+  max-width: 25px;
+  margin: 0 1vw 0 1vw;
+}
+/*-------------------------------------------------------------*/
+/* RESPONSIVE STYLE */
+@media (max-width: 600px) {
+  .footer-container {
+    height: 4.2em !important;
+  }
+}
+
 @media (min-width: 900px) {
   .footer-item {
     font-size:1em !important;
@@ -40,9 +54,4 @@
     text-align: right !important;
   }
 }
-
-.footerImg {
-  width: 20vw;
-  max-width: 25px;
-  margin: 0 1vw 0 1vw;
-}
+/*-------------------------------------------------------------*/

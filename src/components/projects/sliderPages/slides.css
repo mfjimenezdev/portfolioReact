@@ -1,0 +1,66 @@
+/* SLIDER PAGES MAIN STYLES */
+.slider {
+  text-align: center;
+  background-color: #353535 !important;
+  box-shadow: rgb(0, 0, 0) 3px 3px 6px 0px inset, 
+    rgba(255, 255, 255, 0.05) -3px -3px 6px 1px inset !important;
+  border-radius: 10px !important;
+}
+
+/* FORK GITHUB RIBBON */
+.ghRibbon div {
+  background-color: #A71212 !important;
+}
+
+@media (max-width: 700px) {
+  .ghRibbon div {
+    top: 20px !important;
+    right: -69px !important;
+  }
+
+  .ghRibbon div a {
+    line-height: 9px !important;
+    font-size: 8px !important;
+  }
+}
+/*-------------------------------------------------------------*/
+/*-------------------------------------------------------------*/
+/* PORTFOLIO SLIDER */
+#portfolio_text {
+  color: rgba(255,255,255,0.6);
+  text-shadow: 2px 2px 3px rgba(255,255,255,0.1);
+  width: 90%;
+
+  margin-top: 1.5em !important;
+  font-size: clamp(1vw, 5vw, 50px);
+}
+
+#portfolio_icon {
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+  width: 30vw;
+  max-width: 380px;
+  cursor: pointer;
+  animation: portfolio_icon1_movement ease-in-out 1.8s infinite;
+}
+
+@keyframes portfolio_icon1_movement {
+  0% { transform: rotate(0deg); }
+  5% { transform: rotate(-5deg); }
+  10% { transform: rotate(5deg); }
+  15% { transform: rotate(-5deg); }
+  20% { transform: rotate(5deg); }
+  25% { transform: rotate(-5deg); }
+  30% { transform: rotate(5deg); }
+  40% { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
+}
+
+#portfolioFeatures {
+  color: white;
+  visibility: hidden;
+  font-size: clamp(1vw, 2.25vw, 20px);
+}
+/*-------------------------------------------------------------*/
+/*-------------------------------------------------------------*/
