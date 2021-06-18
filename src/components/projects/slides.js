@@ -1,6 +1,7 @@
+/* eslint-disable no-nested-ternary */
+import React, { useState } from 'react';
 import './projects.css';
-import {RadioGroup, Radio, FormControlLabel } from '@material-ui/core';
-import { useState } from 'react';
+import { RadioGroup, Radio, FormControlLabel } from '@material-ui/core';
 import { useBetween } from 'use-between';
 
 import catAllN from '../../assets/images/project/cat_allN.svg';
@@ -25,7 +26,7 @@ function SliderControl() {
 
   const handleChange = (event) => {
     setCategory(event.target.value);
-  }
+  };
 
   return (
     <RadioGroup defaultValue="all" name="slider-control" onChange={handleChange}>
@@ -36,27 +37,32 @@ function SliderControl() {
   );
 }
 
-// RENDER CLASSIFIED COMPONENTS 
+// RENDER CLASSIFIED COMPONENTS
 function RenderSlides() {
   const { category } = useSharedCategory();
 
-  return (
-    <>
-      { category === 'react' ?
-        <>
-          <><Portfolio /></>
-        </>
-      : category === 'linux' ?
-        <>
-        </>
-      :
-        <>
-          <><Portfolio /></>
-          <><Portfolio /></>
-        </>
-      }
-    </>
-  );
+  if (category === 'all') {
+    return (
+      <>
+        <><Portfolio /></>
+      </>
+    );
+  }
+
+  if (category === 'react') {
+    return (
+      <>
+        <><Portfolio /></>
+      </>
+    );
+  }
+
+  if (category === 'linux') {
+    return (
+      <>
+      </>
+    );
+  }
 }
 
-export { SliderControl, RenderSlides};
+export { SliderControl, RenderSlides };

@@ -1,3 +1,4 @@
+import React from 'react';
 import { Grid } from '@material-ui/core';
 import './navbar.css';
 
@@ -8,18 +9,18 @@ import contactIco from '../../assets/images/barsIcons/contact_ico.svg';
 
 function navbar() {
   function menuToggle() {
-    var iconContainer = document.getElementById('menuDashIcons');
-    iconContainer.classList.toggle("showed");
-    iconContainer.classList.toggle("hidden");
+    const iconContainer = document.getElementById('menuDashIcons');
+    iconContainer.classList.toggle('showed');
+    iconContainer.classList.toggle('hidden');
   }
-  
+
   return (
     <div className="navbar-container">
 
       <div id="menuToggleIcon">
-        <input type="checkbox" id="menuToggled" onClick={menuToggle.bind()}/>
-        <span id="span1"></span>
-        <span id="span2"></span>
+        <input type="checkbox" id="menuToggled" onClick={menuToggle.bind()} />
+        <span id="span1" />
+        <span id="span2" />
       </div>
 
       <Grid container id="menuDashIcons" className="hidden">
@@ -38,7 +39,7 @@ function navbar() {
       </Grid>
 
     </div>
-  )
+  );
 }
 
 export default navbar;

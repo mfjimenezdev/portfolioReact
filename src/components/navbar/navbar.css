@@ -79,21 +79,25 @@
 @media (max-width: 700px) {
   .hidden > #icon1 {
     opacity: 0 !important;
+    visibility: hidden !important;
     margin: 1vh -15vw 0 0 !important;
   }
   
   .hidden > #icon2 {
     opacity: 0 !important;
+    visibility: hidden !important;
     margin: 1vh -15vw 0 0 !important;
   }
   
   .hidden > #icon3 {
     opacity: 0 !important;
+    visibility: hidden !important;
     margin: 1vh -12vw 0 0 !important;
   }
   
   .hidden > #icon4 {
     opacity: 0 !important;
+    visibility: hidden !important;
     margin: 1vh 0 0 0 !important;
   }
 }
@@ -103,7 +107,7 @@
 @media (max-width: 1279px) {
   [id^="icon"] {
     padding-right: 0em;
-    transition: opacity 0.75s, margin 1s;
+    transition: opacity 0.75s, visibility 1s ease-out, margin 1s;
   }
 
   #menuDashIcons.showed {
@@ -119,21 +123,25 @@
 
   .hidden > #icon1 {
     opacity: 0;
+    visibility: hidden !important;
     margin: 1vh -7vw 0 0;
   }
   
   .hidden > #icon2 {
     opacity: 0;
+    visibility: hidden !important;
     margin: 1vh -7vw 0 0;
   }
   
   .hidden > #icon3 {
     opacity: 0;
+    visibility: hidden !important;
     margin: 1vh -7vw 0 0;
   }
   
   .hidden > #icon4 {
     opacity: 0;
+    visibility: hidden !important;
     margin: 1vh 0 0 0;
   }
   
@@ -164,7 +172,7 @@
 @media (min-width: 1280px) {
   [id^="icon"] {
     padding-right: 1em;
-    transition: opacity 0.75s, margin 1s;
+    transition: opacity 0.75s, visibility 1s ease-out, margin 1s;
   }
 
   #menuDashIcons.showed {
@@ -182,21 +190,25 @@
 
   .hidden > #icon1 {
     opacity: 0;
+    visibility: hidden !important;
     margin: 0 0 0 0;
   }
 
   .hidden > #icon2 {
     opacity: 0;
+    visibility: hidden !important;
     margin: -8vh 0 0 0;
   }
 
   .hidden > #icon3 {
     opacity: 0;
+    visibility: hidden !important;
     margin: -8vh 0 0 0;
   }
 
   .hidden > #icon4 {
     opacity: 0;
+    visibility: hidden !important;
     margin: -8vh 0 0 0;
   }
 

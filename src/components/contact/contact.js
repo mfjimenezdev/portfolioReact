@@ -1,46 +1,49 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import './contact.css';
 import emailjs from 'emailjs-com';
-import { makeStyles, Card, CardHeader, CardContent } from '@material-ui/core';
-import { Grid, TextField, Fab, Slide, Paper } from '@material-ui/core';
+import {
+  makeStyles, Card, CardHeader, CardContent,
+  Grid, TextField, Fab, Slide, Paper,
+} from '@material-ui/core';
+
 import { Send } from '@material-ui/icons';
-import mail_ok from '../../assets/images/contact/mail_ok.svg';
-import mail_ko from '../../assets/images/contact/mail_ko.svg';
 import Particles from 'react-particles-js';
+import mailOK from '../../assets/images/contact/mail_ok.svg';
+import mailKO from '../../assets/images/contact/mail_ko.svg';
 import ParticlesConfigBG from '../../assets/scripts/configParticlesBG';
 
 // MaterialUI Styling
 const useStyles = makeStyles({
   textfields: {
-    width: "60vw",
-    ["@media (min-width: 1000px)"]: { // eslint-disable-line no-useless-computed-key
-      width: "30vw",
+    width: '60vw',
+    ['@media (min-width: 1000px)']: { // eslint-disable-line no-useless-computed-key
+      width: '30vw',
     },
 
-    "& .MuiFormLabel-root": {
-      color: "white",
+    '& .MuiFormLabel-root': {
+      color: 'white',
     },
-    
-    "& .MuiOutlinedInput-root": {
-      "& input": {
-        color: "white",
+
+    '& .MuiOutlinedInput-root': {
+      '& input': {
+        color: 'white',
       },
 
-      "& textarea": {
-        color: "white",
+      '& textarea': {
+        color: 'white',
       },
 
-      "& fieldset": {
-        borderColor: "#A71212",
-        borderWidth: "2px",
+      '& fieldset': {
+        borderColor: '#A71212',
+        borderWidth: '2px',
       },
 
-      "&:hover fieldset": {
-        borderColor: "#A71212",
+      '&:hover fieldset': {
+        borderColor: '#A71212',
       },
 
-      "&.Mui-focused fieldset": {
-        borderColor: "#A71212 !important",
+      '&.Mui-focused fieldset': {
+        borderColor: '#A71212 !important',
       },
 
     },
@@ -61,19 +64,19 @@ function Contact() {
   function sendEmail(event) {
     event.preventDefault();
 
-    emailjs.sendForm('service_i7oahqs', 'mfjimenez.dev/contact', event.target, 'user_BOlsdGwC5LQKdJF55mofz').then((res) => {
-      setState({resIco: true, open: true});
-      setTimeout(() => { setState({resIco: true, open: false}) }, 1500);
-    }, (err) => {
-      setState({resIco: false, open: true});
-      setTimeout(() => { setState({resIco: false, open: false}) }, 2000);
+    emailjs.sendForm('serviceID', 'templateID', event.target, 'userID').then(() => {
+      setState({ resIco: true, open: true });
+      setTimeout(() => { setState({ resIco: true, open: false }); }, 1500);
+    }, () => { // ERROR
+      setState({ resIco: false, open: true });
+      setTimeout(() => { setState({ resIco: false, open: false }); }, 2000);
     });
   }
 
   return (
     <div className="contact-container">
       <Card className="contact-card">
-        <CardHeader title="CONTACT ME !" style={{color:"white"}}/>
+        <CardHeader title="CONTACT ME !" style={{ color: 'white' }} />
         <CardContent>
           <form className="contact-form" autoComplete="off" onSubmit={sendEmail}>
             <Grid container direction="column">
@@ -93,7 +96,7 @@ function Contact() {
               </Grid>
 
               <Grid item xs={12} id="submit-field">
-                <Fab style={{backgroundColor: "#A71212"}} variant="extended" type="submit">
+                <Fab style={{ backgroundColor: '#A71212' }} variant="extended" type="submit">
                   <Send />
                 </Fab>
               </Grid>
@@ -105,7 +108,7 @@ function Contact() {
 
       <Slide direction={state.open ? 'right' : 'left'} in={state.open} mountOnEnter unmountOnExit className="sentEvent">
         <Paper elevation={24}>
-          <img src={state.resIco ? mail_ok : mail_ko} alt="response_icon" id="response_icon" />
+          <img src={state.resIco ? mailOK : mailKO} alt="response_icon" id="response_icon" />
           {state.resIco ? '' : <p>Unexpected Error, Try again later!</p>}
         </Paper>
       </Slide>

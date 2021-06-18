@@ -1,15 +1,14 @@
+import React, { useState, useRef, useEffect } from 'react';
 import './projects.css';
 import { Grid } from '@material-ui/core';
 import Typewriter from 'typewriter-effect';
 
 import 'keen-slider/keen-slider.min.css';
 import { useKeenSlider } from 'keen-slider/react';
-import { useState, useRef, useEffect } from 'react';
+import Particles from 'react-particles-js';
 import { SliderControl, RenderSlides } from './slides';
 
-import Particles from 'react-particles-js';
 import ParticlesConfigBG from '../../assets/scripts/configParticlesBG';
-
 
 function Projects() {
   // SLIDER HOOKS
@@ -19,7 +18,7 @@ function Projects() {
   const [totalDots, setTotalDots] = useState(1);
   const [sliderRef, slider] = useKeenSlider({
     slidesPerView: 1,
-    mode: "free-snap",
+    mode: 'free-snap',
     dragSpeed: 0.5,
     spacing: 15,
 
@@ -41,10 +40,10 @@ function Projects() {
 
   // STOP SLIDING ON MOUSE
   useEffect(() => {
-    sliderRef.current.addEventListener("mouseover", () => {
+    sliderRef.current.addEventListener('mouseover', () => {
       setPause(true);
     });
-    sliderRef.current.addEventListener("mouseout", () => {
+    sliderRef.current.addEventListener('mouseout', () => {
       setPause(false);
     });
   }, [sliderRef]);
@@ -58,12 +57,13 @@ function Projects() {
     }, 5000);
     return () => {
       clearInterval(timer.current);
-    }
+    };
   }, [pause, slider]);
 
   // RESET NAV DOTS ON CHANGE
   useEffect(() => {
     if (slider) {
+      slider.moveToSlide(0, 5000);
       setTotalDots(slider.details().size);
     }
   }, [slider]);
@@ -82,15 +82,15 @@ function Projects() {
       <Grid container>
         <Grid item xs={12} id="tw-projects">
           <Typewriter
-            options={{cursor:"_", delay:100}}
+            options={{ cursor: '_', delay: 100 }}
             onInit={(typewriter) => {
-              typewriter.typeString("Check out some of my projects!").start();
+              typewriter.typeString('Check out some of my projects!').start();
             }}
           />
         </Grid>
 
         <Grid item xs={1}>
-          <div onClick={reloadSlider} >
+          <div role="toolbar" onClick={reloadSlider} onKeyDown={reloadSlider}>
             <SliderControl />
           </div>
         </Grid>
@@ -106,23 +106,23 @@ function Projects() {
         <Grid item xs={12}>
           {slider && (
             <div className="dots">
-              {[...Array(totalDots).keys()].map((idx) => {
-                return (
-                  <button
-                    key={idx}
-                    onClick={() => {
-                      slider.moveToSlideRelative(idx)
-                    }}
-                    className={"dot" + (currentSlide === idx ? " active" : "")}
-                  />
-                )
-              })}
+              {[...Array(totalDots).keys()].map((idx) => (
+                <button
+                  aria-label=" "
+                  type="button"
+                  key={idx}
+                  onClick={() => {
+                    slider.moveToSlideRelative(idx);
+                  }}
+                  className={`dot${currentSlide === idx ? ' active' : ''}`}
+                />
+              ))}
             </div>
           )}
         </Grid>
       </Grid>
 
-      <Particles width="99vw" params={ParticlesConfigBG} id="contact-particlesBG" />  
+      <Particles width="99vw" params={ParticlesConfigBG} id="contact-particlesBG" />
     </div>
   );
 }

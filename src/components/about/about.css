@@ -51,34 +51,111 @@
 /* EXPERIENCE */
 #experience-container {
   text-align: center;
+  position: relative;
 }
 
-.experience-items div:nth-of-type(1) {
+.experience-itemsA div:nth-of-type(1) {
   width: 6em !important;
   min-width: 6em !important;
-  padding: 10% 16px; 
+  padding: 13px 5px; 
   white-space: nowrap;
 }
 
-.experience-items div:nth-of-type(2) {
-  min-width: 45px;
+.experience-itemsA div:nth-of-type(2) {
+  min-width: 50px;
+  text-align: center !important;
 }
+
+.experience-itemsB div:nth-of-type(2) {
+  width: 6em !important;
+  min-width: 6em !important;
+  padding: 13px 5px; 
+  white-space: nowrap;
+  text-align: left;
+}
+
+.experience-itemsB div:nth-of-type(1) {
+  min-width: 50px;
+  text-align: center !important;
+}
+
+.MuiTimelineItem-missingOppositeContent:before { flex: 0 !important; padding: 6px !important;}
 
 .dotIcons {
   width: 8vw;
-  max-width: 30px;
+  max-width: 35px;
   border-radius: 50%;
- }
+}
+
+.dotIcons:hover {
+  width: 9vw;
+  max-width: 40px;
+}
+
+.MuiTimeline-root {
+  padding: 6px 20px !important;
+}
 
 .MuiTimelineDot-root {
   padding: 0px !important;
   color: #A71212 !important;
   background-color: #A71212 !important;
-  margin-left: 6px !important;
+  align-self: center !important;
 }
 
 .MuiTimelineConnector-root {
   background-color: #A71212 !important;
+}
+
+@media (max-width: 900px) {
+  .MuiTimeline-root {
+    padding: 6px 10px 0px 0px !important;
+  }
+
+
+}
+/*-------------------------------------------------------------*/
+/* CUSTOM DIALOG */
+.dialog {
+  background-color: white;
+  transition: opacity 0.5s linear, width 0.4s linear, height 0.3s linear, visibility 0.5s ease-out !important;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) !important;
+  max-height: 226px;
+  max-width: 940px;
+}
+
+.dialogOpen {
+  width: 95vw;
+  height:30vh;
+  visibility: visible;
+  opacity: 1;
+}
+
+.dialogClose {
+  width: 0vw;
+  height:0vh;
+  visibility: hidden;
+  opacity: 0;
+}
+/*-------------------------------------------------------------*/
+/* EXPERIENCE DIALOGS */
+.experiences-container {
+  height: 100%;
+}
+
+.experiences-logos {
+  display: flex;
+  align-items: center;
+}
+
+.logos {
+  width: 40vw;
+  max-width: 200px;
+  border-radius: 50%;
 }
 /*-------------------------------------------------------------*/
 /* RESPONSIVE FUNCTIONS */
