@@ -1,4 +1,3 @@
-/* eslint-disable no-nested-ternary */
 import React, { useState } from 'react';
 import './projects.css';
 import { RadioGroup, Radio, FormControlLabel } from '@material-ui/core';
@@ -12,6 +11,7 @@ import catLinuxN from '../../assets/images/project/cat_linuxN.svg';
 import catLinuxY from '../../assets/images/project/cat_linuxY.svg';
 
 import Portfolio from './sliderPages/portfolio';
+import RemoteResource from './sliderPages/remoteResource';
 
 // SHARED HOOKS FUNCTION
 function useCategory() {
@@ -45,6 +45,7 @@ function RenderSlides() {
     return (
       <>
         <><Portfolio /></>
+        <><RemoteResource /></>
       </>
     );
   }
@@ -60,6 +61,7 @@ function RenderSlides() {
   if (category === 'linux') {
     return (
       <>
+        <><RemoteResource /></>
       </>
     );
   }
